@@ -14,13 +14,16 @@ export class AppComponent {
   constructor(private groceryListService: GroceryListService){
     }
 
-  doInput(itemName: string) {
-    this.groceryListService.addItem(this.currentGroceryList, itemName);
+  doInput(event: {itemName: string, action: string}) {
+    const userInput = event.itemName.trim()
+    if (userInput !=='') {
+      if (event.action == 'add') this.groceryListService.addItem(this.currentGroceryList, userInput);
+        else this.currentGroceryList = this.groceryListService.removeItem(this.currentGroceryList, userInput);
+    }
+
   }
 
 }
-
-
 
 // constructor(private weatherSevice: WeatherService){
 //    }
@@ -33,5 +36,4 @@ export class AppComponent {
 // }
 
   
-
 

@@ -7,13 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class WriteItemComponent {
   itemName: string = '';
-  @Output() inputEvent = new EventEmitter<string>();
+  @Output() inputEvent = new EventEmitter<{itemName: string, action: string }>();
 
-  addItem(){
-    this.inputEvent.emit(this.itemName)
+  writeItem(action: string){
+    this.inputEvent.emit({ itemName: this.itemName, action: action })
 
   }
 
-  
+ 
 
 }
