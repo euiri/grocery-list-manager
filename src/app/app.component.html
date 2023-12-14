@@ -1,7 +1,14 @@
-<div style="text-align: center;">
-  <h1>Grocery List Manager</h1>
-  <div>List</div>
-  <h2>List</h2>
-  <div>List</div>
+<div style="text-align: center;align-items: center;">
+  <mat-toolbar color="primary"> Grocery List Manager</mat-toolbar>
+  <div>
+    <p>Update your grocery list!</p>
+  </div>
+  <app-write-item (inputEvent)="doInput($event)"></app-write-item>
 
+  <mat-card style="max-width: 400px; margin-top: 50px; margin-left: 50px; text-align: left;">
+    <h2>Current Grocery List</h2>
+    <app-grocery-list [current]="currentGroceryList"></app-grocery-list>
+  </mat-card>
+  
 </div>
+

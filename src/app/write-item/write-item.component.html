@@ -1,0 +1,12 @@
+<div>
+  <mat-card style="max-width: 400px; margin-top: 50px; margin-left: 50px; text-align: left;">
+    <h2>Add Item</h2>
+    <div style="display: flex; align-items: center; flex: 1;">
+      <label for="itemName">Item Name:</label>
+      <input [(ngModel)]="itemName" type="text" id="itemName"/>
+      <button (click)="addItem()"> 
+        <mat-icon matPrefix>add</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>
